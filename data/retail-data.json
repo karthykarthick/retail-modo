@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "brand": "Retail Modo",
+    "tagline": "Commerce, in a richer light.",
+    "period": "Oct 2025 – Sep 2026",
+    "currency": "USD",
+    "generated": "2026-09-29",
+    "annualTarget": 6000000
+  },
+  "kpis": [
+    { "id": "revenue",  "label": "Net Revenue",        "value": 4716200, "format": "currency", "delta": 18.4, "hint": "Trailing 12 months" },
+    { "id": "orders",   "label": "Orders",             "value": 48930,   "format": "number",   "delta": 12.1, "hint": "Trailing 12 months" },
+    { "id": "aov",      "label": "Avg. Order Value",   "value": 96.38,   "format": "currency", "delta": 5.6,  "hint": "Revenue ÷ orders" },
+    { "id": "customers","label": "Active Customers",   "value": 12847,   "format": "number",   "delta": 22.9, "hint": "Purchased in period" },
+    { "id": "conv",     "label": "Conversion Rate",    "value": 3.82,    "format": "percent",  "delta": 0.4,  "hint": "Sessions → orders" },
+    { "id": "repeat",   "label": "Repeat Purchases",   "value": 41.3,    "format": "percent",  "delta": 3.2,  "hint": "2+ orders per customer" }
+  ],
+  "monthly": [
+    { "month": "Oct 2025", "revenue": 328400, "orders": 3380, "aov": 97.16 },
+    { "month": "Nov 2025", "revenue": 486200, "orders": 5120, "aov": 94.96 },
+    { "month": "Dec 2025", "revenue": 521750, "orders": 5490, "aov": 95.04 },
+    { "month": "Jan 2026", "revenue": 302100, "orders": 3110, "aov": 97.14 },
+    { "month": "Feb 2026", "revenue": 288600, "orders": 2960, "aov": 97.50 },
+    { "month": "Mar 2026", "revenue": 341900, "orders": 3530, "aov": 96.86 },
+    { "month": "Apr 2026", "revenue": 356400, "orders": 3690, "aov": 96.59 },
+    { "month": "May 2026", "revenue": 372800, "orders": 3860, "aov": 96.58 },
+    { "month": "Jun 2026", "revenue": 398250, "orders": 4120, "aov": 96.66 },
+    { "month": "Jul 2026", "revenue": 412600, "orders": 4280, "aov": 96.40 },
+    { "month": "Aug 2026", "revenue": 445300, "orders": 4610, "aov": 96.59 },
+    { "month": "Sep 2026", "revenue": 461900, "orders": 4780, "aov": 96.63 }
+  ],
+  "categories": [
+    { "name": "Audio",        "revenue": 2777550, "units": 14850, "share": 32.5, "growth": 11.6 },
+    { "name": "Wearables",    "revenue": 2309220, "units": 7980,  "share": 27.0, "growth": 19.4 },
+    { "name": "Smart Home",   "revenue": 1762590, "units": 16210, "share": 20.6, "growth": 7.9 },
+    { "name": "Accessories",  "revenue": 1702670, "units": 34330, "share": 19.9, "growth": 12.9 }
+  ],
+  "channels": [
+    { "name": "Online Store",     "share": 46, "revenue": 2169452 },
+    { "name": "Retail Stores",    "share": 32, "revenue": 1509184 },
+    { "name": "Marketplaces",     "share": 15, "revenue": 707430 },
+    { "name": "Social Commerce",  "share": 7,  "revenue": 330134 }
+  ],
+  "regions": [
+    { "name": "North", "share": 30, "revenue": 1414860 },
+    { "name": "South", "share": 26, "revenue": 1226212 },
+    { "name": "East",  "share": 24, "revenue": 1131888 },
+    { "name": "West",  "share": 20, "revenue": 943240 }
+  ],
+  "products": [
+    { "sku": "RM-AUD-001", "name": "Aura Wireless Headphones",  "category": "Audio",       "price": 249, "cost": 118, "stock": 342,  "sold": 4820,  "rating": 4.8, "growth": 12.4 },
+    { "sku": "RM-AUD-002", "name": "Pulse Bone-Conduction Buds","category": "Audio",       "price": 179, "cost": 82,  "stock": 128,  "sold": 3610,  "rating": 4.6, "growth": 8.1 },
+    { "sku": "RM-AUD-003", "name": "Echo Smart Speaker Mini",   "category": "Audio",       "price": 89,  "cost": 41,  "stock": 517,  "sold": 5240,  "rating": 4.7, "growth": 15.2 },
+    { "sku": "RM-AUD-004", "name": "Vista Soundbar 500",        "category": "Audio",       "price": 399, "cost": 210, "stock": 86,   "sold": 1180,  "rating": 4.5, "growth": -3.2 },
+    { "sku": "RM-WEA-001", "name": "Nova Fit Smartwatch",       "category": "Wearables",   "price": 299, "cost": 132, "stock": 264,  "sold": 4380,  "rating": 4.9, "growth": 21.7 },
+    { "sku": "RM-WEA-002", "name": "Orbit Fitness Ring",        "category": "Wearables",   "price": 219, "cost": 96,  "stock": 173,  "sold": 2960,  "rating": 4.4, "growth": 9.8 },
+    { "sku": "RM-WEA-003", "name": "Volt AR Glasses",           "category": "Wearables",   "price": 549, "cost": 310, "stock": 42,   "sold": 640,   "rating": 4.2, "growth": 32.5 },
+    { "sku": "RM-HOM-001", "name": "Lumen Smart Bulb 4-Pack",   "category": "Smart Home",  "price": 59,  "cost": 22,  "stock": 892,  "sold": 8460,  "rating": 4.6, "growth": 11.3 },
+    { "sku": "RM-HOM-002", "name": "Sentry Video Doorbell",     "category": "Smart Home",  "price": 149, "cost": 68,  "stock": 318,  "sold": 3120,  "rating": 4.5, "growth": 6.9 },
+    { "sku": "RM-HOM-003", "name": "Breeze Air Purifier",       "category": "Smart Home",  "price": 279, "cost": 141, "stock": 121,  "sold": 1890,  "rating": 4.7, "growth": 4.4 },
+    { "sku": "RM-HOM-004", "name": "Chefio Smart Kettle",       "category": "Smart Home",  "price": 99,  "cost": 44,  "stock": 266,  "sold": 2740,  "rating": 4.3, "growth": 2.1 },
+    { "sku": "RM-ACC-001", "name": "Flux 65W GaN Charger",      "category": "Accessories", "price": 49,  "cost": 18,  "stock": 1240, "sold": 9630,  "rating": 4.8, "growth": 18.6 },
+    { "sku": "RM-ACC-002", "name": "Glide Laptop Stand Pro",    "category": "Accessories", "price": 79,  "cost": 31,  "stock": 458,  "sold": 3480,  "rating": 4.6, "growth": 7.7 },
+    { "sku": "RM-ACC-003", "name": "Terra Eco Phone Case",      "category": "Accessories", "price": 29,  "cost": 9,   "stock": 1680, "sold": 11240, "rating": 4.4, "growth": 14.9 },
+    { "sku": "RM-ACC-004", "name": "Pixel Light Mouse",         "category": "Accessories", "price": 69,  "cost": 26,  "stock": 385,  "sold": 4110,  "rating": 4.5, "growth": -1.8 },
+    { "sku": "RM-ACC-005", "name": "Nomad 20K Power Bank",      "category": "Accessories", "price": 59,  "cost": 24,  "stock": 604,  "sold": 5870,  "rating": 4.7, "growth": 10.5 }
+  ],
+  "orders": [
+    { "id": "ORD-10492", "date": "2026-09-29", "customer": "Amelia Hart",   "product": "Nova Fit Smartwatch",    "qty": 1,  "channel": "Online Store",    "region": "East",  "status": "Processing", "amount": 299.00 },
+    { "id": "ORD-10491", "date": "2026-09-29", "customer": "Diego Ramos",   "product": "Aura Wireless Headphones","qty": 2, "channel": "Online Store",    "region": "South", "status": "Shipped",    "amount": 498.00 },
+    { "id": "ORD-10490", "date": "2026-09-28", "customer": "Mei Tanaka",    "product": "Lumen Smart Bulb 4-Pack","qty": 3,  "channel": "Marketplaces",    "region": "West",  "status": "Delivered",  "amount": 177.00 },
+    { "id": "ORD-10489", "date": "2026-09-28", "customer": "Noah Whitfield","product": "Volt AR Glasses",        "qty": 1,  "channel": "Retail Stores",   "region": "North", "status": "Delivered",  "amount": 549.00 },
+    { "id": "ORD-10488", "date": "2026-09-27", "customer": "Priya Nair",    "product": "Flux 65W GaN Charger",   "qty": 4,  "channel": "Online Store",    "region": "South", "status": "Shipped",    "amount": 196.00 },
+    { "id": "ORD-10487", "date": "2026-09-27", "customer": "Lucas Meyer",   "product": "Breeze Air Purifier",    "qty": 1,  "channel": "Retail Stores",   "region": "East",  "status": "Delivered",  "amount": 279.00 },
+    { "id": "ORD-10486", "date": "2026-09-26", "customer": "Sofia Almeida", "product": "Terra Eco Phone Case",   "qty": 2,  "channel": "Social Commerce", "region": "South", "status": "Delivered",  "amount": 58.00 },
+    { "id": "ORD-10485", "date": "2026-09-26", "customer": "Ethan Cole",    "product": "Echo Smart Speaker Mini","qty": 2,  "channel": "Online Store",    "region": "West",  "status": "Processing", "amount": 178.00 },
+    { "id": "ORD-10484", "date": "2026-09-25", "customer": "Ingrid Solberg","product": "Orbit Fitness Ring",     "qty": 1,  "channel": "Online Store",    "region": "North", "status": "Delivered",  "amount": 219.00 },
+    { "id": "ORD-10483", "date": "2026-09-25", "customer": "Omar Haddad",   "product": "Nomad 20K Power Bank",   "qty": 3,  "channel": "Marketplaces",    "region": "East",  "status": "Shipped",    "amount": 177.00 },
+    { "id": "ORD-10482", "date": "2026-09-24", "customer": "Grace Okafor",  "product": "Glide Laptop Stand Pro", "qty": 1,  "channel": "Retail Stores",   "region": "North", "status": "Delivered",  "amount": 79.00 },
+    { "id": "ORD-10481", "date": "2026-09-24", "customer": "Yuki Mori",     "product": "Chefio Smart Kettle",    "qty": 1,  "channel": "Online Store",    "region": "West",  "status": "Delivered",  "amount": 99.00 },
+    { "id": "ORD-10480", "date": "2026-09-23", "customer": "Henry Walsh",   "product": "Vista Soundbar 500",     "qty": 1,  "channel": "Retail Stores",   "region": "South", "status": "Delivered",  "amount": 399.00 },
+    { "id": "ORD-10479", "date": "2026-09-23", "customer": "Ava Lindqvist", "product": "Sentry Video Doorbell",  "qty": 2,  "channel": "Marketplaces",    "region": "North", "status": "Shipped",    "amount": 298.00 },
+    { "id": "ORD-10478", "date": "2026-09-22", "customer": "Carlos Duarte", "product": "Pixel Light Mouse",      "qty": 2,  "channel": "Online Store",    "region": "East",  "status": "Delivered",  "amount": 138.00 },
+    { "id": "ORD-10477", "date": "2026-09-22", "customer": "Zara Ahmed",    "product": "Pulse Bone-Conduction Buds","qty": 1,"channel": "Social Commerce","region": "West",  "status": "Delivered",  "amount": 179.00 }
+  ]
+}

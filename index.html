@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retail Modo — Commerce, in a richer light</title>
+  <meta name="description" content="Retail Modo — a rich, animated retail performance dashboard with live KPIs, trends, product insights and an Excel report." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c3aed'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='32' font-weight='bold' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ══════════ Preloader ══════════ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__logo">
+        <span class="preloader__mark">M</span>
+        <span class="preloader__ring"></span>
+      </div>
+      <div class="preloader__wordmark">Retail <b>Modo</b></div>
+      <div class="preloader__bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ══════════ Scroll progress ══════════ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ══════════ Navbar ══════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#hero" class="navbar__brand" data-magnetic>
+        <span class="navbar__logo">M</span>
+        <span class="navbar__name">Retail<b>Modo</b></span>
+      </a>
+      <nav class="navbar__links" id="navLinks">
+        <a href="#kpis">Overview</a>
+        <a href="#trend">Trends</a>
+        <a href="#mix">Mix</a>
+        <a href="#products">Products</a>
+        <a href="#orders">Orders</a>
+      </nav>
+      <div class="navbar__actions">
+        <button class="icon-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg class="ico-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
+          <svg class="ico-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        </button>
+        <a href="Retail-Modo-Report.xlsx" download class="btn btn--primary btn--sm" data-magnetic id="navExcelBtn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          Excel Report
+        </a>
+        <button class="icon-btn navbar__burger" id="navBurger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="navbar__mobile" id="navMobile">
+      <a href="#kpis">Overview</a>
+      <a href="#trend">Trends</a>
+      <a href="#mix">Mix</a>
+      <a href="#products">Products</a>
+      <a href="#orders">Orders</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ══════════ Hero ══════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <span class="badge" data-hero-seq>
+            <span class="badge__dot"></span> Live · FY26 trailing 12 months
+          </span>
+          <h1 class="hero__title" data-hero-seq>
+            Retail that feels
+            <span class="rotator" id="wordRotator">
+              <span class="rotator__word is-active">richer</span>
+              <span class="rotator__word">smarter</span>
+              <span class="rotator__word">faster</span>
+              <span class="rotator__word">human</span>
+            </span>
+          </h1>
+          <p class="hero__sub" data-hero-seq>
+            One animated command center for revenue, orders, products and customers —
+            beautifully readable, endlessly explorable, and exportable to Excel in one click.
+          </p>
+          <div class="hero__cta" data-hero-seq>
+            <a href="#kpis" class="btn btn--primary" data-magnetic>
+              Explore the dashboard
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-7-7 7 7 7-7"/></svg>
+            </a>
+            <a href="Retail-Modo-Report.xlsx" download class="btn btn--ghost" data-magnetic>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>
+              Download Excel
+            </a>
+          </div>
+          <div class="hero__meta" data-hero-seq>
+            <div class="avatar-stack" aria-hidden="true">
+              <span>🧑‍💼</span><span>👩‍💻</span><span>🧔</span><span>👩‍🦰</span><span class="avatar-stack__more">+12.8k</span>
+            </div>
+            <p><b>12,847 active customers</b> shopped with us this period</p>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-hero-seq>
+          <div class="hero-card" data-tilt-card>
+            <div class="hero-card__glow"></div>
+            <div class="hero-card__head">
+              <span class="hero-card__title">Revenue pulse</span>
+              <span class="pill pill--up">▲ 18.4% YoY</span>
+            </div>
+            <div class="hero-card__big"><span data-count="4716200" data-format="currency-short">$0</span></div>
+            <svg class="hero-card__spark" viewBox="0 0 260 80" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#7c3aed" stop-opacity=".55"/>
+                  <stop offset="1" stop-color="#06b6d4" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path class="spark-area" d="M0,62 C20,58 30,44 48,40 C66,36 76,20 96,16 C116,12 128,30 148,34 C168,38 178,42 196,36 C214,30 232,22 260,14 L260,80 L0,80 Z" fill="url(#sparkFill)"/>
+              <path class="spark-line" d="M0,62 C20,58 30,44 48,40 C66,36 76,20 96,16 C116,12 128,30 148,34 C168,38 178,42 196,36 C214,30 232,22 260,14" fill="none" stroke="url(#sparkStroke)" stroke-width="3" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#22d3ee"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="hero-card__row">
+              <div><span class="k">Orders</span><span class="v" data-count="48930">0</span></div>
+              <div><span class="k">AOV</span><span class="v">$<span data-count="96.38" data-decimals="2">0</span></span></div>
+              <div><span class="k">Repeat</span><span class="v"><span data-count="41.3" data-decimals="1">0</span>%</span></div>
+            </div>
+          </div>
+          <div class="float-chip float-chip--1" data-float-chip>🏆 Top seller · Flux 65W GaN</div>
+          <div class="float-chip float-chip--2" data-float-chip>⚡ Peak month · Dec ’25</div>
+          <div class="float-chip float-chip--3" data-float-chip>💜 4.6★ avg. rating</div>
+        </div>
+      </div>
+      <a href="#kpis" class="hero__scroll" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ══════════ Ticker ══════════ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track" id="tickerTrack"></div>
+    </div>
+
+    <!-- ══════════ KPIs ══════════ -->
+    <section class="section" id="kpis">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="section__eyebrow">Overview</span>
+          <h2 class="section__title">The numbers, <em>at a glance</em></h2>
+          <p class="section__sub">Six signals that tell you the health of the business — animated the moment they enter view.</p>
+        </div>
+        <div class="kpi-grid" id="kpiGrid"></div>
+      </div>
+    </section>
+
+    <!-- ══════════ Revenue trend ══════════ -->
+    <section class="section section--alt" id="trend">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="section__eyebrow">Trends</span>
+          <h2 class="section__title">Revenue, <em>month by month</em></h2>
+          <p class="section__sub">Hover the chart to inspect any month. The line draws itself — holiday peaks and all.</p>
+        </div>
+        <div class="trend-grid">
+          <div class="glass-card chart-card" data-reveal>
+            <div class="chart-card__head">
+              <div>
+                <span class="chart-card__title">Net revenue</span>
+                <span class="chart-card__period">Oct 2025 → Sep 2026</span>
+              </div>
+              <div class="chart-legend">
+                <span class="chart-legend__item"><i style="--c:#7c3aed"></i>Revenue</span>
+                <span class="chart-legend__item"><i style="--c:#22d3ee"></i>3-mo moving avg.</span>
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="revenueChart" height="340" role="img" aria-label="Monthly revenue line chart"></canvas>
+              <div class="chart-tooltip" id="chartTooltip"></div>
+            </div>
+          </div>
+          <div class="trend-side">
+            <div class="glass-card goal-card" data-reveal>
+              <div class="goal-card__head">
+                <span class="goal-card__title">Annual target</span>
+                <span class="goal-card__pct"><span data-count="78.6" data-decimals="1">0</span>%</span>
+              </div>
+              <div class="goal-bar"><span id="goalBarFill"></span></div>
+              <p class="goal-card__note">$4.72M booked of a $6.0M FY26 target — pacing <b>+9.2% ahead</b> of plan.</p>
+            </div>
+            <div class="glass-card insight-card" data-reveal>
+              <span class="insight-card__icon">📈</span>
+              <div>
+                <b>Seven straight months of growth</b>
+                <p>Revenue has climbed every month since Feb 2026, led by Wearables (+19.4%) and the holiday carry-over in Audio.</p>
+              </div>
+            </div>
+            <div class="glass-card insight-card" data-reveal>
+              <span class="insight-card__icon">🛒</span>
+              <div>
+                <b>Nov–Dec drives 21% of the year</b>
+                <p>Black Friday and holiday gifting delivered $1.008M — the strongest two-month stretch on record.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ Mix: categories / channels / regions ══════════ -->
+    <section class="section" id="mix">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="section__eyebrow">Mix</span>
+          <h2 class="section__title">Where the money <em>comes from</em></h2>
+          <p class="section__sub">Category donut, channel split and regional reach — every slice animates into place.</p>
+        </div>
+        <div class="mix-grid">
+          <div class="glass-card donut-card" data-reveal>
+            <h3 class="card-title">Revenue by category</h3>
+            <div class="donut-wrap">
+              <div class="donut" id="categoryDonut">
+                <svg viewBox="0 0 200 200" aria-hidden="true">
+                  <circle class="donut__track" cx="100" cy="100" r="80"/>
+                  <g id="donutSegments"></g>
+                </svg>
+                <div class="donut__center">
+                  <span class="donut__value" id="donutTotal">$0</span>
+                  <span class="donut__label">total mix</span>
+                </div>
+              </div>
+              <ul class="donut-legend" id="donutLegend"></ul>
+            </div>
+          </div>
+          <div class="glass-card bars-card" data-reveal>
+            <h3 class="card-title">Sales channels</h3>
+            <div class="bars" id="channelBars"></div>
+          </div>
+          <div class="glass-card bars-card" data-reveal>
+            <h3 class="card-title">Regions</h3>
+            <div class="bars" id="regionBars"></div>
+          </div>
+          <div class="glass-card radar-card" data-reveal>
+            <h3 class="card-title">Category growth</h3>
+            <div class="growth-grid" id="growthGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ Products ══════════ -->
+    <section class="section section--alt" id="products">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="section__eyebrow">Catalog</span>
+          <h2 class="section__title">Products people <em>actually love</em></h2>
+          <p class="section__sub">Sixteen SKUs across four categories — tilt a card to feel it, sort the table to study it.</p>
+        </div>
+        <div class="product-filter" data-reveal id="productFilter">
+          <button class="chip is-active" data-filter="all">All</button>
+          <button class="chip" data-filter="Audio">🎧 Audio</button>
+          <button class="chip" data-filter="Wearables">⌚ Wearables</button>
+          <button class="chip" data-filter="Smart Home">🏠 Smart Home</button>
+          <button class="chip" data-filter="Accessories">🔌 Accessories</button>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+        <div class="glass-card table-card" data-reveal id="productTableCard">
+          <div class="table-card__head">
+            <h3 class="card-title">Full catalog <span class="muted" id="productCount"></span></h3>
+            <input type="search" class="search-input" id="productSearch" placeholder="Search products, SKUs…" aria-label="Search products" />
+          </div>
+          <div class="table-scroll">
+            <table class="data-table" id="productTable">
+              <thead>
+                <tr>
+                  <th data-sort="sku">SKU</th>
+                  <th data-sort="name">Product</th>
+                  <th data-sort="category">Category</th>
+                  <th data-sort="price" data-type="num">Price</th>
+                  <th data-sort="margin" data-type="num">Margin</th>
+                  <th data-sort="stock" data-type="num">Stock</th>
+                  <th data-sort="sold" data-type="num">Units sold</th>
+                  <th data-sort="rating" data-type="num">Rating</th>
+                  <th data-sort="growth" data-type="num">YoY</th>
+                </tr>
+              </thead>
+              <tbody id="productTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ Orders ══════════ -->
+    <section class="section" id="orders">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="section__eyebrow">Live feed</span>
+          <h2 class="section__title">Latest <em>orders</em></h2>
+          <p class="section__sub">Filter, sort and watch the feed breathe — statuses glow as they change.</p>
+        </div>
+        <div class="glass-card table-card" data-reveal>
+          <div class="table-card__head">
+            <div class="table-card__filters">
+              <div class="select-wrap">
+                <select id="orderStatus" aria-label="Filter by status">
+                  <option value="all">All statuses</option>
+                  <option value="Delivered">Delivered</option>
+                  <option value="Shipped">Shipped</option>
+                  <option value="Processing">Processing</option>
+                </select>
+              </div>
+              <div class="select-wrap">
+                <select id="orderChannel" aria-label="Filter by channel">
+                  <option value="all">All channels</option>
+                </select>
+              </div>
+            </div>
+            <input type="search" class="search-input" id="orderSearch" placeholder="Search orders, customers…" aria-label="Search orders" />
+          </div>
+          <div class="table-scroll">
+            <table class="data-table" id="orderTable">
+              <thead>
+                <tr>
+                  <th data-sort="id">Order</th>
+                  <th data-sort="date">Date</th>
+                  <th data-sort="customer">Customer</th>
+                  <th data-sort="product">Product</th>
+                  <th data-sort="qty" data-type="num">Qty</th>
+                  <th data-sort="channel">Channel</th>
+                  <th data-sort="region">Region</th>
+                  <th data-sort="status">Status</th>
+                  <th data-sort="amount" data-type="num" class="ta-r">Amount</th>
+                </tr>
+              </thead>
+              <tbody id="orderTableBody"></tbody>
+            </table>
+          </div>
+          <div class="table-foot">
+            <span id="orderSummary"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ Excel CTA ══════════ -->
+    <section class="section section--cta" id="excel">
+      <div class="container">
+        <div class="cta-card" data-reveal>
+          <div class="cta-card__bg" aria-hidden="true"></div>
+          <div class="cta-card__content">
+            <span class="badge badge--inverse"><span class="badge__dot"></span> One click, five sheets</span>
+            <h2>Take the whole story <em>to Excel</em></h2>
+            <p>Dashboard, monthly sales, product margins, channel mix and the live order log — formatted, charted and ready to share.</p>
+            <div class="cta-card__actions">
+              <a href="Retail-Modo-Report.xlsx" download class="btn btn--light" data-magnetic id="ctaExcelBtn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+                Download .xlsx
+              </a>
+              <button class="btn btn--outline-light" data-magnetic id="regenBtn" type="button">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/></svg>
+                How it’s built
+              </button>
+            </div>
+            <div class="cta-sheets">
+              <span>📊 Dashboard</span><span>📈 Monthly Sales</span><span>📦 Products</span><span>🥧 Channel Mix</span><span>🧾 Orders</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════ Footer ══════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="navbar__logo">M</span>
+        <div>
+          <b>Retail Modo</b>
+          <p>Commerce, in a richer light.</p>
+        </div>
+      </div>
+      <div class="footer__links">
+        <a href="#kpis">Overview</a>
+        <a href="#trend">Trends</a>
+        <a href="#products">Products</a>
+        <a href="#orders">Orders</a>
+        <a href="Retail-Modo-Report.xlsx" download>Excel report</a>
+      </div>
+      <p class="footer__note">Data period Oct 2025 – Sep 2026 · Generated <span data-generated></span> · Built with vanilla HTML, CSS &amp; JS</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
